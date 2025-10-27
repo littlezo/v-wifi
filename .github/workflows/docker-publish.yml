@@ -54,10 +54,6 @@ jobs:
         uses: docker/metadata-action@v5 # v5.0.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=ref,pattern=refs/heads/main,format=latest
-            type=ref,pattern=refs/tags/v*.*.*,format={{refname}}
-            type=sha
 
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
